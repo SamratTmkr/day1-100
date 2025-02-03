@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let a = 51 //blocked scope
+        const PI = 3.147 //blocked scope
+        var b = 34 //global scope //xyz is still printed because if a function scope is defined in block then it overwrites the initial global scoped var
+        {
+            let a = 5;  // Scoped to the block i.e blocked scope, cannot be accessed outside of the block.
+            const PI = 3.14; // Scoped to the block i.e blocked scope, cannot be accessed outside of the block.
+            var b = 'xyz'; // Function-scoped or globally scoped depending on where declared.
+        }
+
+
+        console.log("<br>a: " + a)
+        console.log("<br>PI: " + PI)
+        console.log("<br>b: " + b)
+
+        document.write('<br>a: ' + a)
+        document.write('<br>PI: ' + PI)
+        document.write('<br>b: ' + b)
+
+        // Defining the value is prioritized over declaring
+        // This applies to variables declared with `let` and `var`, but doesn't work for constants
+        //if :- a = 11; then result is 11 // Works because `a` was previously declared with `let`, so its value can be  reassigned
+
+        //if :- b = 55; then result is 55 // Works, as `b` was declared with `var` and can be reassigned
+        // PI = 3.14159; // This would throw TypeError, as `PI` is a constant and cannot be reassigned
+
+
+        console.log(x); // ✅ `undefined` (var is hoisted)
+        console.log(y); // ❌ ReferenceError (let is hoisted but not initialized)
+
+        var x = 10;
+        let y = 20;
+
+
+        //since var is not blocked scope its value can be changed
+    </script>
+</body>
+
+</html>
+<br>
+<br>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /**
+        arithmetic operators
+        sum => +
+        difference => -
+        product => *
+        division =>/
+        modulus/remainder => %
+    
+    
+        ++ => increment
+        -- => decrement
+        ** => exponent
+        **/
+        let m = 5
+        let n = 4
+
+        document.write("<br>Sum = " + (m + n))
+        document.write("<br>Difference = " + (m - n))
+        document.write("<br>Product = " + (m * n))
+        document.write("<br>division(Quotient) = " + Math.floor(m / n))
+        document.write("<br>Remainder: " + (m % n))
+
+        document.write("<br>5<sup>4</sup>: " + (m ** n))
+        m += 2
+        document.write('<br>m=' + m )
+
+
+
+
+        // Comparison Operators
+        // == => Equal to
+        // != => Not equal to
+        // >=> Greater than
+        // <=> Less than
+        // >= => Greater than or equal to
+        // <= => Less than or equal to
+        // === => Strictly equal(checks value and type)
+        // !== => Strictly not equal(checks value and type)
+      
+
+        
+        let p = 5
+        let q = 4
+        document.write("<br>p=" , p )
+        document.write("<br>q=" , q )
+        document.write("<br>Is p equal to q? (==) " + (p == q))
+        document.write("<br>Is p not equal to q? (!=) " + (p != q))
+        document.write("<br>Is p greater than q? (>) " + (p > q))
+        document.write("<br>Is p less than q? (<) " + (p < q))
+        document.write("<br>Is p greater than or equal to q? (>=) " + (p >= q))
+        document.write("<br>Is p less than or equal to q? (<=) " + (p <= q))
+        document.write("<br>Is p strictly equal to q? (===) " + (p === q))
+        document.write("<br>Is p strictly not equal to q? (!==) " + (p !== q))
+
+    </script>
+</body>
+
+</html>
