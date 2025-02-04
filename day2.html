@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //ternary operator
+        let x = 5
+        let y = 6
+
+        let result = x > y ? x : y
+        document.write("greatest value is" + result) // why +result and not ,result
+
+        x > y ? document.write("<br>x is greater") : document.write("<br> y is greater")
+
+        let z = 10
+
+        res = x > y ? (x > z ? x : z) : (y > z ? y : z)   //() is optional
+        document.write('<br>greatest is' + res)
+
+
+
+// If Statement
+// Using If-Else Statement
+// Using Switch Statement
+// Using For loop
+
+
+
+        //logical operator
+        // &&	logical and
+        // ||	logical or
+        // !	logical not
+
+        var num = parseInt(prompt("Enter a number")); // Ask user for input
+        var char = prompt("enter a string")
+
+        // Check if the number is odd or even
+        if (num % 2 === 0) {
+            document.write(num + " is Even<br>");
+        }
+
+        else if (!(num % 2 === 0)) {
+            document.write(num + " is Odd<br>");
+        }
+        else
+            document.write(num + " is invalid<br>");
+
+        // Check if the character is a vowel, consonant, or other
+        if (
+            char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u' ||
+            char === 'A' || char === 'E' || char === 'I' || char === 'O' || char === 'U'
+        ) {
+            document.write(char + " is a Vowel<br>");
+        } else if (
+             (!((char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z')))
+        ) {
+            document.write(char + " is invalid <br>");
+        } else {
+            document.write(char + " is a Consonant<br>");
+
+        }
+
+
+  
+        //bitwise operator
+        /* 6. Bitwise
+AND  -  &
+OR   -  |
+NOT  -  ~
+<<   -  left shift
+>>   -  right shift
+
+a = 5  ->  101
+b = 2  ->  010
+
+a & b  =  000  = 0
+a | b  =  111  = 7
+a << 2  -  101  -  10100
+*/
+
+let input = Number(prompt("enter number range from 0 to 6 to find the day"))
+
+
+switch (input) {
+        case 0:
+            document.write("today is sunday")
+            break;
+      
+            case 1:
+            document.write("today is mon")
+            break;
+            case 2:
+            document.write("today is tues")
+            break;
+            case 3:
+            document.write("today is wed")
+            break;
+            case 4:
+            document.write("today is thrus")
+            break;
+            case 5:
+            document.write("today is fri")
+            break;
+            case 6:
+            document.write("today is sat")
+            break;
+
+        default:
+
+        document.write("invalid input")
+            break;
+      } 
+
+
+      var num = parseInt(prompt("Enter the number of terms:")); // Take user input
+
+var a = 0, b = 1, next;
+
+document.write("Fibonacci Series: <br>");
+
+// Loop to generate Fibonacci sequence
+for (var i = 1; i <= num; i++) {
+    document.write(a + " "); // Print current term
+    next = a + b; // Calculate next term
+    a = b; // Update variables
+    b = next;
+}
+
+
+        //type of , instance of
+        let number = 42;
+let string = "Hello";
+let boolean = true;
+let object = { name: "<br>Samrat" };
+
+console.log(typeof number);  // "number"
+console.log(typeof string);  // "string"
+console.log(typeof boolean); // "boolean"
+console.log(typeof object);  // "object"
+
+
+// example for now 
+let arr = [1, 2, 3];
+let date = new Date();
+
+console.log(arr instanceof Array);  // true
+console.log(date instanceof Date); // true
+console.log(arr instanceof Object); // true
+
+
+
+
+    </script>
+</body>
+
+</html>
