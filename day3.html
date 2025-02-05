@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //popup boxes in js
+        // alert() example
+// alert("This is an alert!");
+
+// // confirm() example
+// let isConfirmed = confirm("Do you want to proceed?");
+// console.log(isConfirmed ? "User clicked OK" : "User clicked Cancel");
+
+// // prompt() example
+// let name = prompt("What is your name?");
+// console.log("Hello, " + name + "!");
+
+// alert(): Displays a message.
+// confirm(): Asks a yes/no question.
+// prompt(): Asks for user input.
+
+        // while,do while loop, nested loop
+
+        
+        //while (condition) {
+        // Code to be executed
+        //}
+        let count = 0;
+        let choice = confirm("Do you want to increase count?");
+        while (choice == true) {
+            count++;
+            choice = confirm("Do you want to increase count?");
+        }
+        document.write("<br>Count = " + count);
+
+
+        //do {
+        // Code to be executed
+        //} while (condition);
+
+        let num = 0;
+        let i = 0;
+        do {
+            num += i;
+            i++;
+            console.log(num) //individual sums
+        }
+        while (i < 5);
+        console.log(num) //consoles total sum
+
+
+        //         for (initialization; condition; increment) { 
+        //     // Outer loop
+        //     for (initialization; condition; increment) { 
+        //         // Inner loop
+        //         // Code to execute
+        //     }
+        // }
+
+
+        //template literal
+
+        // Template Strings use back-ticks (``) rather than the quotes ("") to define a string:
+        // Template Strings allow variables in strings:
+        let firstName = "John";
+        let lastName = "Doe";
+
+        let text = `Welcome ${firstName}, ${lastName}!`;
+        console.log(text)
+    </script>
+</body>
+
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //PRACTICE QUESTIONS
+
+        /*
+        1. WAP to print natural numbers from 1 to 100 using while loop
+        2. WAP to print odd numbers from 1 to 99 using do-while loop
+        3. WAP to print 50 terms of a series 1, 5, 9, 13, .... using while
+        4. WAP to print multiplication table from 1 to 5 using nested loop
+        5. WAP to calculate factorial of 5 using do-while
+        6. WAP to check whether a given number is prime or composite
+        7. WAP to draw pyramid using star using nested loop
+        8. WAP to draw reverse pyramid using star using nested loop
+
+        */
+
+
+        //1
+
+        natural = 1
+        result = 0
+        while (natural < 100) {
+            result = natural
+            natural++
+            console.log(result)
+
+        }
+
+        //2
+
+        odd = 1
+        result = 0
+        do {
+            odd = odd + 2
+            document.write("<br>"+odd)
+
+        }
+        while (odd < 99)
+
+
+//2
+        sum_ = 1
+        document.write("<br>"+"1")
+        while (sum_ < 50) {
+            sum_=sum_+4
+            document.write("<br>"+sum_)
+        }
+//4
+        for(i=1;i<=5;i++){
+                    for(j=1;j<=10;j++){
+                        document.write(`<br>${i}*${j}=${i*j}<br>`)
+                    }
+                    document.write('<hr>')
+                }
+
+
+//5
+let fact = 1;
+let z = 1;
+
+while (z <= 5) {
+    fact *= z;  
+    z++; 
+}
+console.log(fact); 
+
+  
+
+
+//6
+
+let m=1
+let n=prompt("enter a number")
+let c=0
+
+for(m=1;m<=n;m++){
+    if(n%m==0)
+    c=c+1
+}
+if (c==2)
+console.log(`${n} is prime `)
+else
+console.log(`${n} is composite `)
+
+
+
+//7
+
+        for (i = 1; i <= 10; i++) {
+            for (j = 1; j <=i; j++) {
+                document.write(`&nbsp;`)
+            }
+            for (k = 10; k >= i; k--) {
+                document.write(` * `)
+            }
+            document.write('<br>')
+        }
+
+
+
+
+//8
+
+        for (i = 1; i <= 10; i++) {
+            for (j = 10; j >= i; j--) {
+                document.write(` &nbsp;`)
+            }
+            for (k = 1; k <= i; k++) {
+                document.write(` * `)
+            }
+            document.write('<br>')
+        }
+
+    </script>
+</body>
+
+</html>
