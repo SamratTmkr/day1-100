@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+
+<body>
+    <script>
+        // function ==> a block of code that performs a specific task
+        // A function can be called multiple times for multile values
+        // function must be defined befoe called
+        // function name must be ended with parenthesis i.e. ()
+
+        //defining the function
+        //-------------------------------
+        // traditional method
+        //ECMA SCRIPT METHOD (modern method) ==> using fat-arrow(also called as an arrow function)
+        //while naming function name
+        //1. it must start with alphabets or underscore(_) followed by alphabets, numbers, underscore(-)
+
+        //2. we must avoid spaces , js keyword, variable name and special characer as function name
+
+        //3. we should use case format for better understanding 
+
+        // traditional method
+        // defining function name
+
+        //no parameter no return
+        function showName() {
+            let myname = 'aakash'
+            document.write(`${myname}<br>`)
+        }
+        // calling function name
+        showName()
+
+
+
+
+        // FUNCTION  with arguement
+        //with parameter no return
+        function AddNumber(a, b) { //this is parameter while defining funtion
+            let sum = a + b
+            document.write(`Sum is ${sum}<br>`)
+        }
+        // calling function
+        AddNumber(10, 20) // this is arguement while callling function
+
+
+
+        //    without parameter , with return 
+        function sub() {
+            let a = 5;
+            let b = 2;
+            return (a + b)
+        }
+        let subt = sub()
+        document.write("sum is " + subt)
+
+
+
+
+        // function with return type
+        //with parameter and return
+        function sumNumber(x, y, z) {
+            let sum = x + y + z
+            return sum
+        }
+        let res = sumNumber(10, 20, 30)
+        document.write(`<br>sum of three number is ${res}<br>`)
+
+
+        // modern JS
+        const shoName = () => {
+            let myName = "samrat"
+            document.write(`Hello,${myName}<br>`)
+        }
+        shoName()
+
+        //with arguements
+        const addNumber = (c, d) => {
+            document.write(`${c + d}<br>`)
+        }
+        addNumber(10, 30)
+        //shortcut method
+        const addNum = (c, d) => document.write(`${c + d}<br>`)
+    </script>
+</body>
+
+</html>
