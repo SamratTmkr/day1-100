@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>array</title>
+
+</head>
+
+<body>
+
+    <script>
+
+ //array methods
+
+//  length,push,shift,unshift,pop,sort,reverse,splice 
+
+
+
+/* Array - collection of data */
+
+let arr = [1, 2, 3, "RAM", true, ['x', 'y', 'z'],
+
+    {"NAME": "RAM"}, null, undefined, 99];
+
+
+
+document.write("Length: " + arr.length);
+
+document.write("<br>First member: " + arr[0]);
+
+document.write("<br>Last member: " + arr[arr.length - 1]);
+
+// document.write(arr)
+
+let fruits = ["apple", "orange", "mango", "banana", "grapes"];
+
+document.write("<br>Fruits: " + fruits);
+
+
+
+
+
+//length
+
+document.write(`<br>Number of fruits in the array fruits : ${fruits.length}<br>`)
+
+
+
+//push ==> add element at last position
+
+fruits.push('mango')
+
+document.write(`${fruits}<br>`)
+
+//unshift ==> add elements at first position
+
+fruits.unshift('orange')
+
+document.write(`${fruits}<br>`)
+
+
+
+//pop() ==. to remove element from last position
+
+let removed =fruits.pop()
+
+document.write(`${fruits}<br>`)
+
+document.write(`${removed}<br>`)
+
+
+
+//shift ==> to remove elements from first position
+
+fruits.shift()
+
+document.write(`${fruits}<br>`)
+
+
+
+//sort ==> to arrange the element in alphabetical order
+
+fruits.sort()
+
+document.write(`${fruits}<br>`)
+
+
+
+//reverse()==> to reverse the elements(not descending)
+
+
+
+// note for descending first sort then reverse
+
+
+
+//reverse
+
+fruits.reverse()
+
+document.write(`${fruits}<br>`)
+
+
+
+// splice() ==> to add/remove elements at any specific position
+
+// splice(index,number,new_member)
+
+//index => where to add or remove
+
+//number =>number of member to remove
+
+//new_member => list of members to be added
+
+fruits.splice(1,0,'papaya')
+
+document.write(`${fruits}<br>`)
+
+
+
+// for just remove
+
+fruits.splice(1,1)
+
+document.write(`${fruits}<br>`)
+
+
+
+
+
+// slice (start,end) // end exclusive
+
+
+
+let new_fruits = fruits.slice(2,4)
+
+document.write(`${fruits}<br>`)
+
+document.write(`<br> Fruits: ${new_fruits}<br>`)
+
+
+
+
+
+
+
+new_fruits = fruits.slice(2) // if only start is given it will cunt till end
+
+document.write(`<br>${new_fruits}<br>`)
+
+
+
+new_fruits = fruits.slice(-2) //it will count from end
+
+document.write(`<br>${new_fruits}<br>`)
+
+
+
+//for 
+
+
+
+for(i=0 ; i<fruits.length;i++){
+
+    document.write("<br><li>" + fruits[i] + "</li><br>")
+
+}
+
+
+
+//for in
+
+
+
+for(var item in fruits) {
+
+    document.write("<br><li>" + fruits[item] + "</li><br>")
+
+}
+
+
+
+//for of
+
+for(var item of fruits) {
+
+    document.write("<h4>" + item + "</h4><br>")
+
+}
+
+
+
+let num = [55, 556, 5, 25, 15, 100, 254, 32, 99, 121];
+
+
+
+// ascending
+
+num.sort((a, b) => a - b);
+
+
+
+// descending
+
+num.sort((a, b) => b - a);
+
+
+
+document.write("<br>Sorting numbers: " + num);
+
+
+
+
+
+// uppercase,lowercase, find,findIndex,map,filter,reduce,reduceRight , forEach , some ,Every
+
+
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
