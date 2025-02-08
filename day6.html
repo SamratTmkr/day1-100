@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //callback funciton
+        //A callback function is a function that is passed as an argument to another function and is executed inside that function, typically after a specific task is completed.
+        function greet(name, callback) {
+            console.log("Hello, " + name);
+            callback();
+        }
+
+        function sayGoodbye() {
+            console.log("Goodbye!");
+        }
+
+        // Passing `sayGoodbye` as a callback function
+        greet("Samrat", sayGoodbye);
+
+        //Array methods
+        //for each, map , filter ,Find, FindIndex
+
+        let fruits = ['apple', 'orange', 'banana', 'peach', 'grapes', 'pineapple']
+
+        //for  each :-
+        //anonymous function
+        //foreach(anonymous function)
+        fruits.forEach(function (item, index) {
+            document.write("<li>" + index + item + "</li><br>")
+        })
+        //arrow function
+        fruits.forEach((item, i) => {
+            document.write("<li>" + item + i + "</li>")
+        })
+        //         The forEach method only provides three arguments to the callback:
+
+        // item → The current element.
+        // i → The index of the current element.
+        // j → The entire array.
+
+
+        //map
+
+
+        let new_fruits = fruits.forEach((item) => {
+            // document.write("<li>"+item+i+"</li>")
+            return item.toUpperCase()
+        })
+        document.write("New fruits (foreach)" + new_fruits)
+        //for each cannot be used for returning
+
+
+        new_fruits = fruits.map((item) => {
+            return item.toUpperCase()
+        })
+        document.write("<br>New fruits (map)" + new_fruits)
+
+        //map can be used for returning values
+
+
+        //filter
+        //if not found , returns empyy array
+
+        new_fruits = fruits.filter((fruit) => {
+            return fruit.match(/ap/)
+        })
+        document.write("<br>Filtered result:" + new_fruits)
+
+
+        let num = [52, 53, 54, 75, 34]
+        let new_num = num.filter(n => n < 40)
+        document.write('<br> filtered number is:-' + new_num)
+
+        //find 
+        //if not found , returns undefined
+
+        new_fruits = fruits.find((fruit) => {
+            return fruit.match(/ap/)
+        })
+        document.write("<br>Filtered result:" + new_fruits)
+
+        num = [52, 53, 54, 75, 34]
+        new_num = num.find(n => n > 40)
+        document.write('<br> filtered number is:-' + new_num)
+
+        //findIndex
+        //if index not found returns -1
+
+        new_fruits = fruits.findIndex((fruit) => {
+            return fruit.match(/b/)
+        })
+        document.write("<br>Filtered result:" + new_fruits)
+
+        num = [52, 53, 54, 75, 34]
+        new_num = num.findIndex(n => n > 40)
+        document.write('<br> filtered number is:-' + new_num)
+
+        //findLastIndex
+        new_fruits = fruits.findLastIndex((fruit) => {
+            return fruit.match(/ap/)
+        })
+        document.write("<br>Filtered result:" + new_fruits)
+
+        num = [52, 53, 54, 75, 34];
+        new_num = num.findLastIndex(n => n > 40);
+        document.write('<br> Filtered number index is: ' + new_num);
+
+
+        //findLast
+        new_fruits = fruits.findLast((fruit) => {
+            return fruit.match(/ap/)
+        })
+        document.write("<br>Filtered result:" + new_fruits)
+
+        num = [52, 53, 54, 75, 34];
+        new_num = num.findLast(n => n > 40);
+        document.write('<br> Filtered number index is: ' + new_num);
+
+
+        //fill
+
+        fruits.fill("ooo", 2, 3)
+        document.write("<br>Fill:", fruits)
+
+        //every,some,includes
+        //includes
+        let result = fruits.includes('apple', 0, 5) //to check whether there is duplicate or not we add its index we can also give it a range
+        document.write('<br>', result) //returns  true or false
+
+
+        //every
+        num = [52, 53, 54, 75, 34];
+        result = num.every(member => member < 100)
+        document.write('<br> Members less than hundred:', result)
+
+        //some
+        result = num.some(member => member < 40)
+        document.write('<br> Some Members less than 50:', result)
+
+        let new_fruit = fruits.concat(num, 'watermelon')
+        document.write("<br>", new_fruit);
+
+
+        //reduce , reduceRight : mostly used to calculate sum of members
+        let numb = [1, 2, 3, 4, 5]
+
+        let sum = numb.reduce((accumulator, current) => {
+            document.write("<br>", accumulator, ",", current)
+            return accumulator + current
+        }, 0)
+        document.write("<br>Sum=", sum)
+
+
+        let sum1 = numb.reduceRight((accumulator, current) => {
+            document.write("<br>", accumulator, ",", current)
+            return accumulator + current
+        }, 0)
+        document.write("<br>Sum=", sum)
+
+
+    </script>
+</body>
+
+</html>
