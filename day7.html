@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //STRINGS
+
+        let str = 'HELlO WOrLd'
+        document.write(str)
+        document.write(`<br>Length:${str.length}`)
+        document.write(`<br>First letter:${str[0]}`)
+        document.write(`<br>Last letter:${str[10]}`)
+
+        document.write(`<br>${str.toLowerCase()}`)
+        document.write(`<br>${str.toUpperCase()}`)
+
+        let fname = "ram"
+        let lname = "shrestha"
+
+        let fullname = fname.concat(" ", "kumar", " ", lname)
+        document.write(`<br> full name is ${fullname}`)
+        document.write('<br>', fullname)
+
+
+        fullname = fname + ' ' + lname
+        document.write("<br>", fullname)
+
+        let search_result = str.search('W') //gives index
+        document.write("<br>", search_result)
+
+        search_result = str.indexOf('W') //same 
+        document.write("<br>", search_result)
+
+        search_result = str.charAt(7)
+        document.write("<br>", search_result)
+
+        //for character code
+        search_result = str.charCodeAt(1)
+        document.write("<br>", search_result)
+
+        //trim - replace white spaces at the beginning and end of the string
+
+        str = "            Hello world     "
+        document.write("<br>with spaces: ", str.length)
+        document.write("<br>START TRIM:", str.trimStart().length)
+        document.write("<br>START END:", str.trimEnd().length)
+        document.write("<br>TRIM:", str.trim().length)
+
+
+        //slice
+        let strn = 'javascript learnings'
+        let new_str = strn.slice(-7, -2); // Corrected
+        document.write('<br>', new_str);
+
+        //substring(start,end) - same as slice but doesnot accept negative index
+        new_str = strn.substring(2, 7);
+        document.write("<br>", new_str)
+
+
+        //repeat
+        document.write("<br>", new_str.repeat(5))
+
+        //padStart, padEnd
+
+        document.write("<br>", new_str.padStart(7, 'jav'))
+        document.write("<br>", new_str.padEnd(8, 'ipt'))
+
+        //replace
+        str = "good morning"
+        document.write("<br>", str)
+
+        new_str = str.replace('o', '0') //replaces only first occourence
+        document.write("<br>", str)
+
+        //for replacing every occourance
+
+        new_str = str.replace(/o/ig, '0') // ig means no case sensitive, g is case sensitive
+        document.write('<br>', new_str)
+
+        //split
+        let result = str.split(' ')
+        document.write('<br>', result)
+        document.write('<br>', result.length)
+
+        str = 'JavaScript is a programming language for web. Javascript is easy to learn.'
+        let sentences = str.split('.')
+        document.write('<br>', sentences.length)
+
+        //join
+        let words = ['<br>JavaScript', 'is', 'awesome', 'and', 'powerful'];
+        let sentenc = words.join(' ');  // Join array elements with a space between them
+        document.write(sentenc);  // Output: "JavaScript is awesome and powerful"
+
+
+
+        //wap to remove empty spaces from a sentence.
+        // split then bich ma euta space halera jodne
+        str = '<br>JavaScript is        a programming language for web.     Javascript is  easy to learn.'
+        let sentence = str.split(' ')
+        sentence.filter(sentence => sentence !== '')
+        let new_sentence = sentence.join(' ')
+        new_sentence = new_sentence.replace(/,/g, '');
+        document.write(new_sentence)
+
+
+    </script>
+</body>
+
+</html>
