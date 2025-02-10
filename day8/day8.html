@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module" src="./index.js" >//for module to work in js we need to give the type module in script tag</script>
+
+    <script>
+        //Immutability means that once an object, array, or variable is created
+        //it cannot be changed or modified
+
+        let numbers = [1,2,3]
+        numbers.push(4)//modifies the original array
+        console.log(numbers) //[1,2,3,4]
+
+
+        const numbers1 =[1,2,3]
+        const newNumbers1 = [...numbers1 , 4] // creates a new array with the  added element
+
+        console.log(numbers1,"original array")
+        console.log(newNumbers1,"new array")
+
+
+
+        //closures
+
+        function createCounter(){
+            let count =0;
+            return function(){
+                count+=1
+                console.log(count)
+
+            }
+        }
+
+        const counter = createCounter()
+        counter()
+        counter()
+        counter()
+
+        console.log('output of the es6 model using import and export')
+    </script>
+</body>
+</html>
