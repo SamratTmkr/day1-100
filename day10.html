@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select {
+            margin-top: 5px;
+            padding: 5px;
+        }
+        h1, h2 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Color Picker -->
+    <label for="colorPicker">Choose a background color:</label>
+    <input type="color" id="colorPicker" onchange="changeBackgroundColor()">
+
+    <!-- Dropdown Menu -->
+    <label for="dropdown">Select an item:</label>
+    <select id="dropdown" onchange="displaySelectedItem()">
+        <option value="Item 1">Item 1</option>
+        <option value="Item 2">Item 2</option>
+        <option value="Item 3">Item 3</option>
+        <option value="Item 4">Item 4</option>
+    </select>
+
+    <!-- Display Selected Item -->
+    <h1 id="selectedItemDisplay"></h1>
+
+    <!-- Text Input -->
+    <label for="textInput">Type something:</label>
+    <input type="text" id="textInput" onkeyup="displayText()" placeholder="Type here...">
+
+    <!-- Display Typed Text -->
+    <h2 id="typedTextDisplay"></h2>
+
+    <!-- Calculator Form -->
+    <form onsubmit="return false;">
+        <label for="num1">Enter first number:</label>
+        <input type="number" id="num1" placeholder="Enter your 1st number">
+
+        <label for="num2">Enter second number:</label>
+        <input type="number" id="num2" placeholder="Enter your 2nd number">
+
+        <label for="operator">Enter operator (+, -, *, /):</label>
+        <input type="text" id="operator" placeholder="Enter operator" onchange="calculateResult()">
+
+        <!-- Display Calculation Result -->
+        <h2 id="calculationResult"></h2>
+    </form>
+
+    <script>
+        // Function to change the background color
+        function changeBackgroundColor() {
+            const choosenColor = document.getElementById('colorPicker').value;
+            document.body.style.backgroundColor = choosenColor;
+        }
+
+        // Function to display the selected item from the dropdown
+        function displaySelectedItem() {
+            const selectedItem = document.getElementById('dropdown').value;
+            document.getElementById('selectedItemDisplay').innerHTML = `You have selected: ${selectedItem}`;
+        }
+
+        // Function to display the text typed in the input field
+        function displayText() {
+            const typedText = document.getElementById('textInput').value;
+            document.getElementById('typedTextDisplay').innerHTML = `You typed: ${typedText}`;
+        }
+
+        // Function to calculate the result based on the operator
+        function calculateResult() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const operator = document.getElementById('operator').value;
+
+            let result;
+
+            // Perform calculation based on the operator
+            switch (operator) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    result = num2 !== 0 ? num1 / num2 : 'Error: Division by zero';
+                    break;
+                default:
+                    result = 'Invalid operator';
+            }
+
+            // Display the result
+            document.getElementById('calculationResult').innerHTML = `Result: ${result}`;
+        }
+    </script>
+</body>
+</html>
