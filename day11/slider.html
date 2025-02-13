@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        .container{
+            width: 75%;
+            height: 450px;
+            margin: auto;
+            color: darkkhaki;
+            position: relative;
+        }
+        .container img{
+            height: 100%;
+            width: 100%;
+        }
+        .left{
+            position: absolute;
+            left: 0;
+            top: 50%;
+        }
+        .right{
+            position: absolute;
+            right: 0;
+            top: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src='' alt="" id="slider_img">
+        <button class="left" onclick="prev_img()">&lt;&lt;</button>
+        <button class="right" onclick="next_img()">&gt;&gt;</button>
+    </div>
+    <script>
+        let images=['banner1.jpg','banner2.avif','banner3.jpg']
+
+        let index = 0
+        let slider_img = document.getElementById('slider_img')
+        slider_img.src = images[index]
+        const next_img = () =>{
+            index++
+            if(index == images.length){
+                index=0
+            }
+            slider_img.src = images[index]
+        }
+        const prev_img = () =>{
+            index--
+            if(index<0){
+                index = images.length -1
+            }
+            slider_img.src = images[index]
+        }
+        setInterval(next_img,[3000])
+    </script>
+</body>
+</html>

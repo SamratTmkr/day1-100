@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- //hide ra show ko satta icons -->
+    <input type="password">
+    <button onclick="pass()">show</button>
+    <script>
+        let type = 'pass'
+        const pass=()=>{
+           // let pwd = document.querySelector('input').value
+           document.querySelector('input').setAttribute('type','text')
+
+           if (type=='pass'){
+            document.querySelector('button').innerText = 'Hide'
+            type = 'text'
+           }
+           else {
+            document.querySelector('input').setAttribute('type','password')
+            document.querySelector('button').innerHTML='Show'
+            type='pass'
+        }
+        }
+    </script>
+</body>
+</html>
