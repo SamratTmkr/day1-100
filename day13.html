@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequential Output</title>
+</head>
+<body>
+    <h1></h1>
+    <script>
+        const news = [
+            {
+                newsTitle: 'FirstNews',
+                newsContent: 'This is first News content.'
+            },
+            {
+                newsTitle: 'SecondNews',
+                newsContent: 'This is second News content.'
+            }
+        ];
+
+        const demoFunction = () => {
+            let result = '';
+            news.forEach((item) => {
+                result += `<li>${item.newsTitle}</li><ul><li>${item.newsContent}</li></ul><br>`;
+            });
+            document.querySelector('h1').innerHTML = result;
+        };
+
+        const showNews = () => {
+            setTimeout(demoFunction, 1000); // Display news after 1 second
+        };
+
+        // Callback function
+        const addNews = (newData, callback) => {
+            setTimeout(() => {
+                news.push(newData);
+                callback();
+            }, 1000); // Add ThirdNews after 2 seconds
+        };
+
+        // Display initial news (FirstNews and SecondNews)
+        showNews();
+
+        // Add third news using callback
+        addNews({
+            newsTitle: 'ThirdNews',
+            newsContent: 'This is third News content.'
+        }, () => {
+            setTimeout(demoFunction, 2000); // Display ThirdNews after 3 seconds
+        });
+
+        // Promise method
+        const addNewss = (newData) => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    news.push(newData);
+                    let error = false;
+                    if (!error) {
+                        resolve();
+                    } else {
+                        reject('Something went wrong');
+                    }
+                },4000); // Add FourthNews after 4 seconds
+            });
+        };
+
+        // Add fourth news using Promise
+        addNewss({
+            newsTitle: 'FourthNews',
+            newsContent: 'This is fourth News content.'
+        })
+            setTimeout(demoFunction, 5000); // Display FourthNews after 5 seconds
+
+        // Async/await method
+        const addingNews = async () => {
+            await new Promise((resolve) => setTimeout(resolve, 6000)); // Wait for 6 seconds
+            await addNews({
+                newsTitle: 'FifthNews',
+                newsContent: 'This is fifth News content.'
+            }, () => {
+                setTimeout(demoFunction, 7000); // Display FifthNews after 7 seconds
+            });
+        };
+
+        // Add fifth news using async/await
+        addingNews();
+    </script>
+</body>
+</html>
