@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Lexical scope is the ability for a function scope to access variables from the parent scope.
+        //syntax
+        //this binding
+        //arguement object
+
+        function normalFunc(){
+            console.log(this) //"this" depends on how the function is called
+        }
+
+        const arrowFunc = () =>{
+          console.log(this) // "this is taken from surrounding space"
+        }
+
+        const obj ={
+            name:"emma",
+            normalFunc:normalFunc,
+            arrowFunc:arrowFunc
+        }
+
+        obj.normalFunc() // "this" refers to obj
+        //Why?
+// In JavaScript, when calling object.method(), this refers to the object before the dot (.).
+
+
+        // obj.arrowFunc()
+
+
+
+
+
+        //array destructuring
+
+        const numbers=[10,20,30]
+
+        //extract values into variable
+        const[a,b,c]=numbers
+
+        console.log(a)//10
+        console.log(b)//20
+        console.log(c)//30
+
+        //... is the rest parameter (triple dots)
+        //syntax
+// function functionname(...parameters)
+// {
+// statement;
+// }
+
+
+        //object destructuring
+
+        const person = {name:'alice',age:25,country:"USA",city:"atlanta"}
+
+        //Extract values
+        
+        const { name,age,...rest } = person //prototype in console why because one object inherits the values of another obj
+
+        console.log(name) //alice
+        console.log(age) //25
+        console.log(rest)
+        
+
+
+    </script>
+    
+</body>
+</html>
